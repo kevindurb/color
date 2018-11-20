@@ -6,8 +6,31 @@
     <title>Color</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
     <link rel="stylesheet" href="./index.css" />
+    <script>
+      window.process = {
+        env: {
+          NODE_ENV: 'development',
+        },
+      };
+
+      window.require = (pkg) => {
+        switch (pkg) {
+          case 'preact':
+            return window.preact;
+        }
+      }
+    </script>
   </head>
   <body>
+    <script src="https://unpkg.com/jss/dist/jss.min.js"></script>
+    <script src="https://unpkg.com/preact@8.3.1/dist/preact.dev.js"></script>
+    <script src="https://unpkg.com/preact@8.3.1/debug.js"></script>
+    <script src="https://unpkg.com/preact@8.3.1/devtools.js"></script>
+    <script>
+      window.h = preact.h;
+      window.Component = preact.Component;
+      window.render = preact.render;
+    </script>
     <script src="./index.js" type="module"></script>
   </body>
 </html>

@@ -1,4 +1,6 @@
-import { ColorPicker } from './components/ColorPicker.js';
-import { h } from './h.js';
+import Picker from '/components/Picker.js';
 
-document.body.appendChild(h(ColorPicker));
+render(
+  h(Picker),
+  document.body,
+);
